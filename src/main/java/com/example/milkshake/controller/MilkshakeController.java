@@ -38,7 +38,7 @@ public class MilkshakeController {
 
     @GetMapping("/milkshake/{id}")
     public ResponseEntity<Optional<Milkshake>> show(@PathVariable Long id) {
-        Optional<Milkshake> milkshake = milkshakeRepository.findMilkshakeById(id);
+        Optional<Milkshake> milkshake = milkshakeRepository.findById(id);
         if (milkshake.isPresent()) {
             return ResponseEntity.ok(milkshake);
         } else {
